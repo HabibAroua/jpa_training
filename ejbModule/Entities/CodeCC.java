@@ -8,4 +8,14 @@ import javax.persistence.Entity;
 public class CodeCC extends Compte
 {
 	private double decouvert;
+	
+	public void setDecouvert(double decouvert)
+	{
+		this.decouvert=decouvert;
+	}
+	
+	public double getDecouvert()
+	{
+		return this.decouvert;
+	}
 }

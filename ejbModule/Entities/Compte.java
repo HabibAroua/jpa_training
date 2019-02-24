@@ -29,9 +29,69 @@ public class Compte implements Serializable
 
 	
 	private static final long serialVersionUID = 1L;
-
-	public Compte() {
+	
+	public String getCodeCompte() 
+	{
+		return codeCompte;
+	}
+	
+	public void setCodeCompte(String codeCompte) 
+	{
+		this.codeCompte = codeCompte;
+	}
+	
+	public Date getDateCreation()
+	{
+		return this.dateCreation;
+	}
+	
+	public void setDateCreation(Date dateCreation)
+	{
+		this.dateCreation = dateCreation;
+	}
+	
+	public double getSolde()
+	{
+		return this.solde;
+	}
+	
+	public void setSolde(double solde) 
+	{
+		this.solde = solde;
+	}
+	
+	public Client getClient() 
+	{
+		return this.client;
+	}
+	
+	public void setClient(Client client)
+	{
+		this.client = client;
+	}
+	
+	public Employes getEmploye() 
+	{
+		return this.employe;
+	}
+	
+	public void setEmploye(Employes employe)
+	{
+		this.employe = employe;
+	}
+	
+	public Collection<Operation> getOperations()
+	{
+		return this.operations;
+	}
+	
+	public void setOperations(Collection<Operation> operations) 
+	{
+		this.operations = operations;
+	}
+	
+	public Compte() 
+	{
 		super();
 	}
-   
 }
