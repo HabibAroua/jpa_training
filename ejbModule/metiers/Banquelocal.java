@@ -1,5 +1,4 @@
 package metiers;
-
 import java.util.List;
 import javax.ejb.Local;
 import Entities.Client;
@@ -18,6 +17,7 @@ public interface Banquelocal
 	public void addCompte(Compte c , Long nulCli , Long numEmp  );
 	public void addOperation(Operation op , String numCpte , Long numEmp );
 	public Compte consulterCompte(String numCpte);
+	public Compte consulterCompte(Long code);
 	public List<Client> cosnulterClientParNom(String mc);
 	public List<Client> consulterClients();
 	public List<Groupe>  consulterGroupes();
