@@ -3,11 +3,12 @@ package metiers;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import Entities.Client;
 import Entities.Compte;
 import Entities.Employes;
 import Entities.Groupe;
-import Entities.Operation;
+import Entities.Operation;;
 
 @Stateless(name="BANQUE")
 public class BanqueEJBIMPl implements Banquelocal
@@ -94,36 +95,35 @@ public class BanqueEJBIMPl implements Banquelocal
 	@Override
 	public List<Client> consulterClients() 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Query req=em.createQuery("select eg from Employe e");
+		return req.getResultList();
 	}
 
 	@Override
 	public List<Groupe> consulterGroupes()
 	{
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Employes> consulterEmployes() 
 	{
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Employes> consulterEmployesParGroupe(Long idG)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Query req=em.createQuery("select e from Employe e where e.groupes.numGroupe=:x");
+		req.setParameter("x",idG);
+		return req.getResultList();
 	}
 
 	@Override
 	public Employes consulterEmploye(Long idEmp)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Employes e=em.find(Employes.class,idEmp);
+		if(e==null) throw new RuntimeException("Employe "+idEmp+" n'existe pas ");
+		return e;
 	}
-
 }
